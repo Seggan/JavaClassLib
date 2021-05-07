@@ -22,4 +22,8 @@ public final class LongEntry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), ByteUtils.longToBytes(value));
     }
+
+    public long getValue() {
+        return value;
+    }
 }

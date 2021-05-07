@@ -22,4 +22,8 @@ public final class DoubleEntry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), ByteUtils.doubleToBytes(value));
     }
+
+    public double getValue() {
+        return value;
+    }
 }

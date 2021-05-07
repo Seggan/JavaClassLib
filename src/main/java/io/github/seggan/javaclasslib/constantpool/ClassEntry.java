@@ -19,4 +19,8 @@ public final class ClassEntry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), name.getIndexBytes());
     }
+
+    public UTF8Entry getName() {
+        return name;
+    }
 }

@@ -22,4 +22,8 @@ public final class FloatEntry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), ByteUtils.floatToBytes(value));
     }
+
+    public float getValue() {
+        return value;
+    }
 }

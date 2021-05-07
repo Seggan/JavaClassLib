@@ -25,4 +25,12 @@ abstract class ClassMemberEntry extends ConstantPoolEntry {
     public final byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), clazz.getIndexBytes(), nameAndType.getIndexBytes());
     }
+
+    public ClassEntry getClassEntry() {
+        return clazz;
+    }
+
+    public NameAndTypeEntry getNameAndType() {
+        return nameAndType;
+    }
 }

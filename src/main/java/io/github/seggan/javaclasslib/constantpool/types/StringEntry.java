@@ -22,4 +22,8 @@ public final class StringEntry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), string.getIndexBytes());
     }
+
+    public UTF8Entry getString() {
+        return string;
+    }
 }

@@ -22,4 +22,8 @@ public final class IntegerEntry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), ByteUtils.intToBytes(value));
     }
+
+    public int getValue() {
+        return value;
+    }
 }

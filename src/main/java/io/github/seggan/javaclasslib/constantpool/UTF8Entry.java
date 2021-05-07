@@ -25,4 +25,8 @@ public final class UTF8Entry extends ConstantPoolEntry {
     public byte[] getBytes() {
         return Bytes.concat(getTag().getByte(), ByteUtils.twoBytesFromInt(data.length), data);
     }
+
+    public byte[] getData() {
+        return data;
+    }
 }
