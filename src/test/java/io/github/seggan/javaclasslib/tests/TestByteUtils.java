@@ -26,11 +26,6 @@ public class TestByteUtils {
             ByteUtils.intToBytes(16));
     }
 
-    @Test
-    public void testDoubleToByte() {
-        System.out.println(byteArrayToHex(ByteBuffer.allocate(8).order(ByteOrder.BIG_ENDIAN).putDouble(1.22).array()));
-    }
-
     public static String byteArrayToHex(byte[] a) {
         StringBuilder sb = new StringBuilder(a.length * 2);
         for(byte b: a)

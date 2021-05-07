@@ -24,15 +24,29 @@ public abstract class ConstantPoolEntry {
         return tag;
     }
 
+    /**
+     * Returns the index of this entry in the constant pool. Not to be confused with {@link #getIndexBytes()}
+     *
+     * @return the index of this constant pool entry
+     */
     public final int getIndex() {
         return constantPool.indexOf(this);
     }
 
+    /**
+     * Returns the bytes that make up the index of this entry in the constant pool. Not to
+     * be confused with {@link #getIndex()}
+     *
+     * @return a byte array of size 2 representing the index of this constant pool entry
+     */
     @Nonnull
     public final byte[] getIndexBytes() {
         return ByteUtils.twoBytesFromInt(getIndex());
     }
 
+    /**
+     * Converts this constant pool entry into its byte representation in a class file
+     */
     @Nonnull
     public abstract byte[] getBytes();
 
