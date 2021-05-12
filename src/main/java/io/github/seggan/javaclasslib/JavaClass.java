@@ -45,11 +45,12 @@ public final class JavaClass {
         out.write(ByteUtils.twoBytesFromInt(ClassAccessFlags.combine(classAccessFlags)));
         out.write(thisClass.getIndexBytes());
         out.write(superClass.getIndexBytes());
-        out.write(new byte[]{0, 0});
+        out.write(new byte[]{0, 0, 0, 0});
         out.write(ByteUtils.twoBytesFromInt(methods.size()));
         for (Method method : methods) {
             out.write(method.getBytes());
         }
+        out.write(0);
         out.write(0);
     }
 

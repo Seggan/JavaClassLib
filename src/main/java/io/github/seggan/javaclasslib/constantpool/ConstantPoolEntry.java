@@ -30,7 +30,7 @@ public abstract class ConstantPoolEntry {
      * @return the index of this constant pool entry
      */
     public final int getIndex() {
-        return constantPool.indexOf(this);
+        return constantPool.indexOf(this) + 1;
     }
 
     /**
