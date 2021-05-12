@@ -3,6 +3,7 @@ package io.github.seggan.javaclasslib;
 import io.github.seggan.javaclasslib.constantpool.ClassEntry;
 import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
 import io.github.seggan.javaclasslib.constantpool.UTF8Entry;
+import io.github.seggan.javaclasslib.methods.Method;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public final class JavaClass {
     private final ClassEntry thisClass;
     private final ClassEntry superClass;
     private final int classVersion;
-
+    private final List<Method> methods = new LinkedList<>();
     private ClassAccessFlags[] classAccessFlags = new ClassAccessFlags[0];
 
     public JavaClass(@Nonnull String name, @Nonnull String superclass, int javaVersion) {
@@ -44,6 +45,12 @@ public final class JavaClass {
         out.write(ByteUtils.twoBytesFromInt(ClassAccessFlags.combine(classAccessFlags)));
         out.write(thisClass.getIndexBytes());
         out.write(superClass.getIndexBytes());
+        out.write(new byte[]{0, 0});
+        out.write(ByteUtils.twoBytesFromInt(methods.size()));
+        for (Method method : methods) {
+            out.write(method.getBytes());
+        }
+        out.write(0);
     }
 
     public List<ConstantPoolEntry> getConstantPool() {
@@ -68,5 +75,9 @@ public final class JavaClass {
 
     public void setClassAccessFlags(ClassAccessFlags... classAccessFlags) {
         this.classAccessFlags = classAccessFlags;
+    }
+
+    public List<Method> getMethods() {
+        return methods;
     }
 }
