@@ -14,8 +14,8 @@ public final class CodeAttribute extends Attribute {
     private final int maxLocalVarSize;
     private final List<JvmInstructionImpl> code;
 
-    public CodeAttribute(UTF8Entry nameIndex, int length, int maxStackSize, int maxLocalVarSize, List<JvmInstructionImpl> code) {
-        super(nameIndex, "Code", length);
+    public CodeAttribute(UTF8Entry nameIndex, int maxStackSize, int maxLocalVarSize, List<JvmInstructionImpl> code) {
+        super(nameIndex, "Code");
         this.maxStackSize = maxStackSize;
         this.maxLocalVarSize = maxLocalVarSize;
         this.code = code;

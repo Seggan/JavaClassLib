@@ -7,9 +7,8 @@ import java.nio.charset.StandardCharsets;
 public abstract class Attribute {
 
     private final UTF8Entry nameIndex;
-    private final int length;
 
-    public Attribute(UTF8Entry nameIndex, String requiredName, int length) {
+    public Attribute(UTF8Entry nameIndex, String requiredName) {
         if (!new String(nameIndex.getData(), StandardCharsets.UTF_8).equals(requiredName)) {
             throw new IllegalArgumentException(String.format(
                 "Name of \"%s\" is not \"%s\"",
@@ -19,16 +18,11 @@ public abstract class Attribute {
         }
 
         this.nameIndex = nameIndex;
-        this.length = length;
     }
 
     public abstract byte[] getBytes();
 
     public UTF8Entry getNameIndex() {
         return nameIndex;
-    }
-
-    public int getLength() {
-        return length;
     }
 }

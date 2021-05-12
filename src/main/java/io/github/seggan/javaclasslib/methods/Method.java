@@ -52,7 +52,7 @@ public final class Method {
         return accessFlags;
     }
 
-    public void setAccessFlags(MethodAccessFlags[] accessFlags) {
+    public void setAccessFlags(MethodAccessFlags... accessFlags) {
         this.accessFlags = accessFlags;
     }
 }
