@@ -11,4 +11,7 @@ public abstract class JvmInstruction {
     public byte getInstructionByte() {
         return instructionByte;
     }
+    public byte[] getInstructionBytes() {
+        return new byte[]{instructionByte};
+    }
 }

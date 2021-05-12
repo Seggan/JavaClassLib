@@ -12,6 +12,6 @@ final class SimpleInstructionImpl extends JvmInstructionImpl {
 
     @Override
     public byte[] getBytes() {
-        return new byte[]{this.getInstruction().getInstructionByte()};
+        return getInstruction().getInstructionBytes();
     }
 }
