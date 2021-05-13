@@ -1,4 +1,4 @@
-package io.github.seggan.javaclasslib;
+package io.github.seggan.javaclasslib.util;
 
 import javax.annotation.Nonnull;
 import java.nio.ByteBuffer;

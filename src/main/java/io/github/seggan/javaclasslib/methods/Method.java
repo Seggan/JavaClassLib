@@ -1,10 +1,10 @@
 package io.github.seggan.javaclasslib.methods;
 
 import com.google.common.primitives.Bytes;
-import io.github.seggan.javaclasslib.ByteUtils;
 import io.github.seggan.javaclasslib.attributes.Attribute;
 import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
 import io.github.seggan.javaclasslib.constantpool.UTF8Entry;
+import io.github.seggan.javaclasslib.util.ByteUtils;
 
 import javax.annotation.Nonnull;
 import java.io.ByteArrayOutputStream;

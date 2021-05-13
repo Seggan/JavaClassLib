@@ -1,11 +1,8 @@
 package io.github.seggan.javaclasslib.tests;
 
-import io.github.seggan.javaclasslib.ByteUtils;
+import io.github.seggan.javaclasslib.util.ByteUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 
 public class TestByteUtils {
 

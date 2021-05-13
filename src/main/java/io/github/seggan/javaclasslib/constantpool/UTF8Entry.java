@@ -1,7 +1,7 @@
 package io.github.seggan.javaclasslib.constantpool;
 
 import com.google.common.primitives.Bytes;
-import io.github.seggan.javaclasslib.ByteUtils;
+import io.github.seggan.javaclasslib.util.ByteUtils;
 
 import javax.annotation.Nonnull;
 import java.nio.charset.StandardCharsets;

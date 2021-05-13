@@ -1,20 +1,20 @@
 package io.github.seggan.javaclasslib;
 
+import io.github.seggan.javaclasslib.attributes.Attribute;
 import io.github.seggan.javaclasslib.constantpool.ClassEntry;
 import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
 import io.github.seggan.javaclasslib.constantpool.UTF8Entry;
 import io.github.seggan.javaclasslib.methods.Method;
+import io.github.seggan.javaclasslib.util.ByteUtils;
 
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public final class JavaClass {
 
-    private static final Pattern PERIOD = Pattern.compile("\\.");
     private static final byte[] START_BYTES = new byte[]{(byte) 0xCA, (byte) 0xFE, (byte) 0xBA, (byte) 0xBE, 0, 0};
 
     private final List<ConstantPoolEntry> constantPool = new LinkedList<>();
@@ -23,15 +23,16 @@ public final class JavaClass {
     private final ClassEntry superClass;
     private final int classVersion;
     private final List<Method> methods = new LinkedList<>();
+    private final List<Attribute> attributes = new LinkedList<>();
     private ClassAccessFlags[] classAccessFlags = new ClassAccessFlags[0];
 
     public JavaClass(@Nonnull String name, @Nonnull String superclass, int javaVersion) {
         if (javaVersion < 8) throw new IllegalArgumentException();
         classVersion = javaVersion + 44;
 
-        UTF8Entry utf8Name = new UTF8Entry(constantPool, PERIOD.matcher(name).replaceAll("/"));
+        UTF8Entry utf8Name = new UTF8Entry(constantPool, name);
         this.thisClass = new ClassEntry(constantPool, utf8Name);
-        UTF8Entry superName = new UTF8Entry(constantPool, PERIOD.matcher(superclass).replaceAll("/"));
+        UTF8Entry superName = new UTF8Entry(constantPool, superclass);
         this.superClass = new ClassEntry(constantPool, superName);
     }
 
@@ -50,8 +51,10 @@ public final class JavaClass {
         for (Method method : methods) {
             out.write(method.getBytes());
         }
-        out.write(0);
-        out.write(0);
+        out.write(ByteUtils.twoBytesFromInt(attributes.size()));
+        for (Attribute attribute : attributes) {
+            out.write(attribute.getBytes());
+        }
     }
 
     public List<ConstantPoolEntry> getConstantPool() {
@@ -80,5 +83,9 @@ public final class JavaClass {
 
     public List<Method> getMethods() {
         return methods;
+    }
+
+    public List<Attribute> getAttributes() {
+        return attributes;
     }
 }

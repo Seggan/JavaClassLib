@@ -8,7 +8,7 @@ A generic example can be found [here](https://github.com/Seggan/JavaClassLib/blo
 ##### Creating a class
 This will create a basic class named `TheName` extending `some.super.Class` compiled with Java version 11. Note that java versions less than 8 are not supported and using one will throw an exception.
 ```java
-JavaClass aClass = new JavaClass("TheName", "some.super.Class", 11);
+JavaClass aClass = new JavaClass("TheName", "some/super/Class", 11);
 aClass.setAccessFlags(ClassAccessFlags.PUBLIC);
 ```
 

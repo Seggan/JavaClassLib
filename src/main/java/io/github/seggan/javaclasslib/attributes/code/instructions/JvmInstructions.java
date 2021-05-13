@@ -1,7 +1,6 @@
 package io.github.seggan.javaclasslib.attributes.code.instructions;
 
 import com.google.common.primitives.Bytes;
-import io.github.seggan.javaclasslib.ByteUtils;
 import io.github.seggan.javaclasslib.PrimitiveType;
 import io.github.seggan.javaclasslib.constantpool.ClassEntry;
 import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
@@ -12,6 +11,7 @@ import io.github.seggan.javaclasslib.constantpool.types.FloatEntry;
 import io.github.seggan.javaclasslib.constantpool.types.IntegerEntry;
 import io.github.seggan.javaclasslib.constantpool.types.LongEntry;
 import io.github.seggan.javaclasslib.constantpool.types.StringEntry;
+import io.github.seggan.javaclasslib.util.ByteUtils;
 
 import javax.annotation.Nonnull;
 
