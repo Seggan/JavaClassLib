@@ -1,6 +1,6 @@
 package io.github.seggan.javaclasslib.attributes.code.instructions;
 
-public abstract class JvmInstruction {
+abstract class JvmInstruction {
 
     private final byte instructionByte;
 

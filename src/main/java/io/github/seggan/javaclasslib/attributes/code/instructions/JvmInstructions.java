@@ -2,7 +2,6 @@ package io.github.seggan.javaclasslib.attributes.code.instructions;
 
 import com.google.common.primitives.Bytes;
 import io.github.seggan.javaclasslib.ByteUtils;
-import io.github.seggan.javaclasslib.attributes.code.JvmInstructionImpl;
 import io.github.seggan.javaclasslib.constantpool.ClassEntry;
 import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
 import io.github.seggan.javaclasslib.constantpool.classmembers.FieldrefEntry;
@@ -25,7 +24,7 @@ public final class JvmInstructions {
      *     <dd>..., null</dd>
      * </dl>
      */
-    public static final StackInstruction ACONST_NULL = new StackInstruction(0x01);
+    public static final NoArgInstruction ACONST_NULL = new NoArgInstruction(0x01);
     /**
      * Loads an object reference from local variable #parameter
      *
@@ -83,7 +82,7 @@ public final class JvmInstructions {
      *     <dd>..., 0.0</dd>
      * </dl>
      */
-    public static final StackInstruction DCONST_0 = new StackInstruction(0x0e);
+    public static final NoArgInstruction DCONST_0 = new NoArgInstruction(0x0e);
     /**
      * Pushes {@code 1.0} (a double) onto the stack
      *
@@ -93,7 +92,7 @@ public final class JvmInstructions {
      *     <dd>..., 1.0</dd>
      * </dl>
      */
-    public static final StackInstruction DCONST_1 = new StackInstruction(0x0f);
+    public static final NoArgInstruction DCONST_1 = new NoArgInstruction(0x0f);
     /**
      * Loads a double from local variable #parameter
      *
@@ -127,7 +126,7 @@ public final class JvmInstructions {
      *     <dd>..., value, value</dd>
      * </dl>
      */
-    public static final StackInstruction DUP = new StackInstruction(0x59);
+    public static final NoArgInstruction DUP = new NoArgInstruction(0x59);
     /**
      * Pushes {@code 0.0} (a float) onto the stack
      *
@@ -137,7 +136,7 @@ public final class JvmInstructions {
      *     <dd>..., 0.0</dd>
      * </dl>
      */
-    public static final StackInstruction FCONST_0 = new StackInstruction(0x0b);
+    public static final NoArgInstruction FCONST_0 = new NoArgInstruction(0x0b);
     /**
      * Pushes {@code 1.0} (a float) onto the stack
      *
@@ -147,7 +146,7 @@ public final class JvmInstructions {
      *     <dd>..., 1.0</dd>
      * </dl>
      */
-    public static final StackInstruction FCONST_1 = new StackInstruction(0x0c);
+    public static final NoArgInstruction FCONST_1 = new NoArgInstruction(0x0c);
     /**
      * Pushes {@code 2.0} (a float) onto the stack
      *
@@ -157,7 +156,7 @@ public final class JvmInstructions {
      *     <dd>..., 2.0</dd>
      * </dl>
      */
-    public static final StackInstruction FCONST_2 = new StackInstruction(0x0d);
+    public static final NoArgInstruction FCONST_2 = new NoArgInstruction(0x0d);
     /**
      * Loads a float from local variable #parameter
      *
@@ -237,7 +236,7 @@ public final class JvmInstructions {
      *     <dd>..., result</dd>
      * </dl>
      */
-    public static final StackInstruction IADD = new StackInstruction(0x60);
+    public static final NoArgInstruction IADD = new NoArgInstruction(0x60);
     /**
      * Pushes {@code 0} (an int) onto the stack
      *
@@ -247,7 +246,7 @@ public final class JvmInstructions {
      *     <dd>..., 0</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_0 = new StackInstruction(0x03);
+    public static final NoArgInstruction ICONST_0 = new NoArgInstruction(0x03);
     /**
      * Pushes {@code 1} (an int) onto the stack
      *
@@ -257,7 +256,7 @@ public final class JvmInstructions {
      *     <dd>..., 1</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_1 = new StackInstruction(0x04);
+    public static final NoArgInstruction ICONST_1 = new NoArgInstruction(0x04);
     /**
      * Pushes {@code 2} (an int) onto the stack
      *
@@ -267,7 +266,7 @@ public final class JvmInstructions {
      *     <dd>..., 2</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_2 = new StackInstruction(0x05);
+    public static final NoArgInstruction ICONST_2 = new NoArgInstruction(0x05);
     /**
      * Pushes {@code 3} (an int) onto the stack
      *
@@ -277,7 +276,7 @@ public final class JvmInstructions {
      *     <dd>..., 3</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_3 = new StackInstruction(0x06);
+    public static final NoArgInstruction ICONST_3 = new NoArgInstruction(0x06);
     /**
      * Pushes {@code 4} (an int) onto the stack
      *
@@ -287,7 +286,7 @@ public final class JvmInstructions {
      *     <dd>..., 4</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_4 = new StackInstruction(0x07);
+    public static final NoArgInstruction ICONST_4 = new NoArgInstruction(0x07);
     /**
      * Pushes {@code 5} (an int) onto the stack
      *
@@ -297,7 +296,7 @@ public final class JvmInstructions {
      *     <dd>..., 5</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_5 = new StackInstruction(0x08);
+    public static final NoArgInstruction ICONST_5 = new NoArgInstruction(0x08);
     /**
      * Pushes {@code -1} (an int) onto the stack
      *
@@ -307,7 +306,7 @@ public final class JvmInstructions {
      *     <dd>..., -1</dd>
      * </dl>
      */
-    public static final StackInstruction ICONST_M1 = new StackInstruction(0x02);
+    public static final NoArgInstruction ICONST_M1 = new NoArgInstruction(0x02);
     /**
      * If value is not zero, go to another instruction as specified by {@link #GOTO_W}
      *
@@ -379,7 +378,7 @@ public final class JvmInstructions {
      *     <dd>..., result</dd>
      * </dl>
      */
-    public static final StackInstruction ISUB = new StackInstruction(0x64);
+    public static final NoArgInstruction ISUB = new NoArgInstruction(0x64);
     /**
      * Pushes {@code 0} (a long) onto the stack
      *
@@ -389,7 +388,7 @@ public final class JvmInstructions {
      *     <dd>..., 0</dd>
      * </dl>
      */
-    public static final StackInstruction LCONST_0 = new StackInstruction(0x09);
+    public static final NoArgInstruction LCONST_0 = new NoArgInstruction(0x09);
     /**
      * Pushes {@code 1} (a long) onto the stack
      *
@@ -399,7 +398,7 @@ public final class JvmInstructions {
      *     <dd>..., 1</dd>
      * </dl>
      */
-    public static final StackInstruction LCONST_1 = new StackInstruction(0x0a);
+    public static final NoArgInstruction LCONST_1 = new NoArgInstruction(0x0a);
     /**
      * Loads a String, int, float, or Class from the constant pool (index specified by the parameter)
      * onto the stack
@@ -487,7 +486,7 @@ public final class JvmInstructions {
      *     <dd>...,</dd>
      * </dl>
      */
-    public static final StackInstruction POP = new StackInstruction(0x57);
+    public static final NoArgInstruction POP = new NoArgInstruction(0x57);
     /**
      * Discards the top two values of the stack, or or the top value if it's a double or
      * long
@@ -498,7 +497,7 @@ public final class JvmInstructions {
      *     <dd>...,</dd>
      * </dl>
      */
-    public static final StackInstruction POP2 = new StackInstruction(0x58);
+    public static final NoArgInstruction POP2 = new NoArgInstruction(0x58);
     /**
      * Swaps the top two values on the stack
      *
@@ -508,17 +507,17 @@ public final class JvmInstructions {
      *     <dd>..., value2, value1</dd>
      * </dl>
      */
-    public static final StackInstruction SWAP = new StackInstruction(0x5f);
+    public static final NoArgInstruction SWAP = new NoArgInstruction(0x5f);
 
     private JvmInstructions() {
     }
 
     /**
-     * An instruction that performs a simple operation on the stack
+     * An instruction that has no parameters
      */
-    public static final class StackInstruction extends JvmInstruction {
+    public static final class NoArgInstruction extends JvmInstruction {
 
-        private StackInstruction(int instructionByte) {
+        private NoArgInstruction(int instructionByte) {
             super(instructionByte);
         }
 
@@ -596,7 +595,7 @@ public final class JvmInstructions {
     }
 
     /**
-     * Instructions that branch (e.x. {@code goto})
+     * An instruction that branches (e.x. {@code goto})
      */
     public static final class BranchInstruction extends JvmInstruction {
 

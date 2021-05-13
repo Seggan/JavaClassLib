@@ -1,6 +1,4 @@
-package io.github.seggan.javaclasslib.attributes.code;
-
-import io.github.seggan.javaclasslib.attributes.code.instructions.JvmInstruction;
+package io.github.seggan.javaclasslib.attributes.code.instructions;
 
 import javax.annotation.Nonnull;
 

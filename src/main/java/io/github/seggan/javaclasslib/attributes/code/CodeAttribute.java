@@ -3,6 +3,7 @@ package io.github.seggan.javaclasslib.attributes.code;
 import com.google.common.primitives.Bytes;
 import io.github.seggan.javaclasslib.ByteUtils;
 import io.github.seggan.javaclasslib.attributes.Attribute;
+import io.github.seggan.javaclasslib.attributes.code.instructions.JvmInstructionImpl;
 import io.github.seggan.javaclasslib.constantpool.UTF8Entry;
 
 import java.io.ByteArrayOutputStream;

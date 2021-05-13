@@ -3,6 +3,7 @@ package io.github.seggan.javaclasslib.methods;
 import com.google.common.primitives.Bytes;
 import io.github.seggan.javaclasslib.ByteUtils;
 import io.github.seggan.javaclasslib.attributes.Attribute;
+import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
 import io.github.seggan.javaclasslib.constantpool.UTF8Entry;
 
 import javax.annotation.Nonnull;
@@ -21,6 +22,10 @@ public final class Method {
     public Method(UTF8Entry name, UTF8Entry descriptor) {
         this.name = name;
         this.descriptor = descriptor;
+    }
+
+    public Method(List<ConstantPoolEntry> constantPool, String name, String descriptor) {
+        this(new UTF8Entry(constantPool, name), new UTF8Entry(constantPool, descriptor));
     }
 
     @Nonnull
