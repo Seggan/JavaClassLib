@@ -5,10 +5,12 @@ import com.google.common.collect.ImmutableMap;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class JCLUtils {
 
     private static final Map<Class<?>, Character> BASE_TYPES;
+    private static final Pattern PERIOD = Pattern.compile("\\.");
 
     static {
         ImmutableMap.Builder<Class<?>, Character> builder = ImmutableMap.builder();
@@ -49,7 +51,7 @@ public class JCLUtils {
                 sb.append(BASE_TYPES.get(c));
             } else {
                 sb.append('L');
-                sb.append(c.getName());
+                sb.append(PERIOD.matcher(c.getName()).replaceAll("/"));
                 sb.append(';');
             }
         }
@@ -66,7 +68,7 @@ public class JCLUtils {
             sb.append(BASE_TYPES.get(c));
         } else {
             sb.append('L');
-            sb.append(c.getName());
+            sb.append(PERIOD.matcher(c.getName()).replaceAll("/"));
             sb.append(';');
         }
 
