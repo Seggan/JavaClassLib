@@ -22,7 +22,7 @@ The entry will automatically add itself to the constant pool on creation.
 ##### Adding methods
 Here comes the juicy part: methods. Adding a method is slightly more complex.
 ```java
-Method m = new Method(new UTF8Entry(aClass.getConstantPool(), "youMethodName"), new UTF8Entry(aClass.getConstantPool(), "(some.Type;)V"));
+Method m = new Method(new UTF8Entry(aClass.getConstantPool(), "yourMethodName"), new UTF8Entry(aClass.getConstantPool(), "(Lsome.Type;)V"));
 m.setAccessFlags(MethodAccessFlags.PUBLIC);
 aClass.getMethods().add(m);
 ```
