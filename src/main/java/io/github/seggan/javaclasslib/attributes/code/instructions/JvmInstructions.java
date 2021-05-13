@@ -2,6 +2,7 @@ package io.github.seggan.javaclasslib.attributes.code.instructions;
 
 import com.google.common.primitives.Bytes;
 import io.github.seggan.javaclasslib.ByteUtils;
+import io.github.seggan.javaclasslib.PrimitiveType;
 import io.github.seggan.javaclasslib.constantpool.ClassEntry;
 import io.github.seggan.javaclasslib.constantpool.ConstantPoolEntry;
 import io.github.seggan.javaclasslib.constantpool.classmembers.FieldrefEntry;
@@ -237,6 +238,26 @@ public final class JvmInstructions {
      * </dl>
      */
     public static final NoArgInstruction IADD = new NoArgInstruction(0x60);
+    /**
+     * Loads an int from an array
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., arrayref, index →</dd>
+     *     <dd>..., value</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction IALOAD = new NoArgInstruction(0x2e);
+    /**
+     * Stores an int into an array
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., arrayref, index, value →</dd>
+     *     <dd>...,</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction IASTORE = new NoArgInstruction(0x4f);
     /**
      * Pushes {@code 0} (an int) onto the stack
      *
@@ -477,6 +498,28 @@ public final class JvmInstructions {
      * </dl>
      */
     public static final CPInstruction<ClassEntry> NEW = new CPInstruction<>(0xbb);
+    /**
+     * Creates a new primitive array. It is recommended to pass a {@link PrimitiveType} as the
+     * parameter
+     *
+     * <dl>
+     *     <dt>Parameters:</dt>
+     *     <dd>A byte representing the primitive type</dd>
+     *     <dt>Stack:</dt>
+     *     <dd>..., count →</dd>
+     *     <dd>..., arrayref</dd>
+     * </dl>
+     */
+    public static final BPInstruction NEWARRAY = new BPInstruction(0xbc);
+    /**
+     * Do nothing
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>[unchanged]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction NOP = new NoArgInstruction(0x00);
     /**
      * Discards the top value of the stack
      *
