@@ -30,11 +30,10 @@ aClass.getMethods().add(m);
 ##### Bytecode
 Finally, bytecode! In Java, bytecode goes into a thing called a *code attribute*, which then goes into the method. Here's a sample:
 ```java
-List<JvmInstructionImpl> instructions = Arrays.asList(
+CodeAttribute code = new CodeAttribute(new UTF8Entry(aClass.getConstantPool(), "Code"), 5, 2, 
     JvmInstructions.ALOAD.create(0),
     JvmInstructions.DUP.create()
 );
-CodeAttribute code = new CodeAttribute(new UTF8Entry(aClass.getConstantPool(), "Code"), 5, 2, instructions);
 m.getAttributes().add(code);
 ```
 The code attribute has 4 arguments: a `UTF8Entry` pointing to the value `Code` (this is very important!), the max stack size, the max local variable size, and a list of bytecode instructions. In this case the instructions are `aload 0, dup`
@@ -45,5 +44,5 @@ What's the point of having a Java class if you can't write it? The `JavaClass` h
 ## Todo
 - Add the rest of the bytecode instructions
 - Add more attributes
-- Add interface, field, and attribute capabilities to classes
+- Add interface and field capabilities to classes
 - Add exception tables to the code attribute
