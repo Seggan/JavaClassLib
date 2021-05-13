@@ -51,6 +51,16 @@ public final class JvmInstructions {
      */
     public static final CPInstruction<ClassEntry> ANEWARRAY = new CPInstruction<>(0xbd);
     /**
+     * Returns an object reference from the method
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., objectref →</dd>
+     *     <dd>[empty]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction ARETURN = new NoArgInstruction(0xb0);
+    /**
      * Stores an object reference into local variable #parameter
      *
      * <dl>
@@ -106,6 +116,16 @@ public final class JvmInstructions {
      * </dl>
      */
     public static final BPInstruction DLOAD = new BPInstruction(0x18);
+    /**
+     * Returns a double from the method
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., value →</dd>
+     *     <dd>[empty]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction DRETURN = new NoArgInstruction(0xaf);
     /**
      * Stores a double into local variable #parameter
      *
@@ -170,6 +190,16 @@ public final class JvmInstructions {
      * </dl>
      */
     public static final BPInstruction FLOAD = new BPInstruction(0x17);
+    /**
+     * Returns a float from the method
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., value →</dd>
+     *     <dd>[empty]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction FRETURN = new NoArgInstruction(0xae);
     /**
      * Stores a float into local variable #parameter
      *
@@ -379,6 +409,16 @@ public final class JvmInstructions {
      */
     public static final CPInstruction<MethodrefEntry> INVOKEVIRTUAL = new CPInstruction<>(0xb6);
     /**
+     * Returns an int from the method
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., value →</dd>
+     *     <dd>[empty]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction IRETURN = new NoArgInstruction(0xac);
+    /**
      * Stores an int into local variable #parameter
      *
      * <dl>
@@ -474,6 +514,16 @@ public final class JvmInstructions {
      */
     public static final BPInstruction LLOAD = new BPInstruction(0x16);
     /**
+     * Returns a long from the method
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., value →</dd>
+     *     <dd>[empty]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction LRETURN = new NoArgInstruction(0xad);
+    /**
      * Stores a long into local variable #parameter
      *
      * <dl>
@@ -541,6 +591,16 @@ public final class JvmInstructions {
      * </dl>
      */
     public static final NoArgInstruction POP2 = new NoArgInstruction(0x58);
+    /**
+     * Returns void from the method
+     *
+     * <dl>
+     *     <dt>Stack:</dt>
+     *     <dd>..., →</dd>
+     *     <dd>[empty]</dd>
+     * </dl>
+     */
+    public static final NoArgInstruction RETURN = new NoArgInstruction(0xb1);
     /**
      * Swaps the top two values on the stack
      *
