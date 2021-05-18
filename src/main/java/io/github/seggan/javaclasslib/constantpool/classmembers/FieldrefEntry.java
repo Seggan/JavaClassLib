@@ -12,4 +12,16 @@ public final class FieldrefEntry extends ClassMemberEntry {
     public FieldrefEntry(List<ConstantPoolEntry> constantPool, ClassEntry clazz, NameAndTypeEntry nameAndType) {
         super(constantPool, ConstantPoolTag.FIELDREF, clazz, nameAndType);
     }
+
+    public FieldrefEntry(List<ConstantPoolEntry> constantPool, ClassEntry clazz, String name, String descriptor) {
+        super(constantPool, ConstantPoolTag.FIELDREF, clazz, name, descriptor);
+    }
+
+    public FieldrefEntry(List<ConstantPoolEntry> constantPool, String clazz, NameAndTypeEntry nameAndType) {
+        super(constantPool, ConstantPoolTag.FIELDREF, clazz, nameAndType);
+    }
+
+    public FieldrefEntry(List<ConstantPoolEntry> constantPool, String clazz, String name, String descriptor) {
+        super(constantPool, ConstantPoolTag.FIELDREF, clazz, name, descriptor);
+    }
 }

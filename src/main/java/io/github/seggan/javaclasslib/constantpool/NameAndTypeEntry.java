@@ -16,6 +16,10 @@ public final class NameAndTypeEntry extends ConstantPoolEntry {
         this.descriptor = descriptor;
     }
 
+    public NameAndTypeEntry(List<ConstantPoolEntry> constantPool, String name, String descriptor) {
+        this(constantPool, new UTF8Entry(constantPool, name), new UTF8Entry(constantPool, descriptor));
+    }
+
     @Nonnull
     @Override
     public byte[] getBytes() {

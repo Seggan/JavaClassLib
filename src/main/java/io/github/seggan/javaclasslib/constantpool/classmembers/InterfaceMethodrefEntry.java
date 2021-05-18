@@ -12,4 +12,16 @@ public final class InterfaceMethodrefEntry extends ClassMemberEntry {
     public InterfaceMethodrefEntry(List<ConstantPoolEntry> constantPool, ClassEntry clazz, NameAndTypeEntry nameAndType) {
         super(constantPool, ConstantPoolTag.INTERFACE_METHODREF, clazz, nameAndType);
     }
+
+    public InterfaceMethodrefEntry(List<ConstantPoolEntry> constantPool, ClassEntry clazz, String name, String descriptor) {
+        super(constantPool, ConstantPoolTag.INTERFACE_METHODREF, clazz, name, descriptor);
+    }
+
+    public InterfaceMethodrefEntry(List<ConstantPoolEntry> constantPool, String clazz, NameAndTypeEntry nameAndType) {
+        super(constantPool, ConstantPoolTag.INTERFACE_METHODREF, clazz, nameAndType);
+    }
+
+    public InterfaceMethodrefEntry(List<ConstantPoolEntry> constantPool, String clazz, String name, String descriptor) {
+        super(constantPool, ConstantPoolTag.INTERFACE_METHODREF, clazz, name, descriptor);
+    }
 }

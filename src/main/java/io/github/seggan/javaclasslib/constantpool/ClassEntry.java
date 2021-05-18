@@ -14,9 +14,6 @@ public final class ClassEntry extends ConstantPoolEntry {
         this.name = name;
     }
 
-    /**
-     * Creates the {@link UTF8Entry} for the user
-     */
     public ClassEntry(List<ConstantPoolEntry> constantPool, String name) {
         this(constantPool, new UTF8Entry(constantPool, name));
     }

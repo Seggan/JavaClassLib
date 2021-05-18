@@ -12,4 +12,16 @@ public final class MethodrefEntry extends ClassMemberEntry {
     public MethodrefEntry(List<ConstantPoolEntry> constantPool, ClassEntry clazz, NameAndTypeEntry nameAndType) {
         super(constantPool, ConstantPoolTag.METHODREF, clazz, nameAndType);
     }
+
+    public MethodrefEntry(List<ConstantPoolEntry> constantPool, ClassEntry clazz, String name, String descriptor) {
+        super(constantPool, ConstantPoolTag.METHODREF, clazz, name, descriptor);
+    }
+
+    public MethodrefEntry(List<ConstantPoolEntry> constantPool, String clazz, NameAndTypeEntry nameAndType) {
+        super(constantPool, ConstantPoolTag.METHODREF, clazz, nameAndType);
+    }
+
+    public MethodrefEntry(List<ConstantPoolEntry> constantPool, String clazz, String name, String descriptor) {
+        super(constantPool, ConstantPoolTag.METHODREF, clazz, name, descriptor);
+    }
 }
