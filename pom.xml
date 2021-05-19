@@ -6,7 +6,7 @@
 
     <groupId>io.github.seggan.javaclasslib</groupId>
     <artifactId>JavaClassLib</artifactId>
-    <version>0.2.1</version>
+    <version>0.3.0</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
